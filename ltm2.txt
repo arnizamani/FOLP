@@ -1,0 +1,256 @@
+
+//**************************
+  Tautologies:
+//**************************
+
+// For Folp version 2.0
+
+//truth table entries
+
+true
+~false
+true & true
+//true | true
+//true | false
+//false | true
+//true -> true
+//false -> true
+//false -> false
+//true <-> true
+//false <-> false
+
+
+//Identity
+
+A | true
+true | A
+A -> true
+false -> A
+A | false <-> A
+false | A <-> A
+A & true <-> A
+true & A <-> A
+(true -> A) <-> A
+(A -> false) <-> ~A
+(A <-> true) <-> A
+(true <-> A) <-> A
+(false <-> A) <-> ~A
+(A <-> false) <-> ~A
+
+//Idempotence
+
+A | A <-> A
+A & A <-> A
+A -> A
+A <-> A
+
+
+//double negations
+
+~~true
+~~A <-> A
+
+//commutativity
+
+A & B <-> B & A
+A | B <-> B | A
+(A <-> B) <-> (B <-> A)
+
+//Associativity
+
+(A & B) & C <-> A & (B & C)
+A & (B & C) <-> (A & B) & C
+(A | B) | C <-> A | (B | C)
+A | (B | C) <-> (A | B) | C
+((A <-> B) <-> C) <-> (A <-> (B <-> C))
+(A <-> (B <-> C)) <-> ((A <-> B) <-> C)
+
+//distributivity
+
+(A & B) | (A & C) <-> A & (B | C)
+(A | B) & (A | C) <-> A | (B & C)
+
+//de Morgan's laws (and)
+
+~A & ~B <-> ~(A | B)
+~(~A & ~B) <-> A | B
+~(A & ~B) <-> ~A | B
+~(~A & B) <-> A | ~B
+
+
+//de Morgan's laws (or)
+
+~A | ~B <-> ~(A & B)
+~(~A | ~B) <-> A & B
+~(A | ~B) <-> ~A & B
+~(~A | B) <-> A & ~B
+
+//excluded middle
+
+A | ~A | B
+~A | A | B
+B | A | ~A
+B | ~A | A
+A | B | ~A
+~A | B | A
+
+A | (~A | B)
+~A | (A | B)
+B | (A | ~A)
+B | (~A | A)
+A | (B | ~A)
+~A | (B | A)
+
+//negations
+
+A | ~A
+~A | A
+(A -> ~A) <-> ~A
+(~A -> A) <-> A
+
+//implication
+
+~A | B <-> A -> B
+(A & ~B) <-> ~(A -> B)
+(~B -> ~A) <-> A -> B
+
+//simplifications
+
+A & B -> A
+A & B -> B
+
+>x(A) -> (A)[x=1]
+>x(A) -> (A)[x=2]
+>x(A) -> (A)[x=3]
+>x(A) -> (A)[x=4]
+>x(A) -> (A)[x=5]
+
+(A <-> B) -> A -> B
+(A <-> B) -> B -> A
+
+<x(A & B) -> <x(A)
+<x(A & B) -> <x(B)
+
+>x(A & B) -> >x(A)
+>x(A & B) -> >x(B)
+
+//additions
+
+A -> (A | B)
+B -> (A | B)
+
+(A)[x=1] -> <x(A)
+(A)[x=2] -> <x(A)
+(A)[x=3] -> <x(A)
+(A)[x=4] -> <x(A)
+(A)[x=5] -> <x(A)
+
+<x(A & B) -> <x(A) & <x(B)
+
+>x(A) -> >x(A | B)
+>x(B) -> >x(A | B)
+
+>x(~A) -> >x(A -> B)
+>x(B) -> >x(A -> B)
+
+//>x(A) | >x(B) -> >x(A | B)
+
+//quantifier expressions
+
+<x(true)
+>x(true)
+>x{}(A)
+>x(A) & >x(B) <-> >x(A & B)
+<x(A) | <x(B) <-> <x(A | B)
+
+
+
+//**************************
+  Non-tautologies:
+//**************************
+
+
+
+//**************************
+  Contradictions:
+//**************************
+
+//truth table entries
+
+false
+~true
+true & false
+false & true
+false & false
+false | false
+true -> false
+true <-> false
+false <-> true
+
+//Identity
+
+A & false
+false & A
+
+//double negations
+
+~~false
+
+//negations
+
+A & ~A
+~A & A
+~A <-> A
+
+//quantifier expressions
+
+<x(false)
+>x(false)
+<x{}(A)
+
+//**************************
+  Non-contradictions:
+//**************************
+
+A -> B
+A | B
+B | A
+
+
+//Cementary
+
+//Tautologies
+
+//Additions
+//---------
+
+//~A -> A -> B
+//B -> (A -> B)
+
+//~A -> A -> B
+//B -> (A -> B)
+
+//equivalence
+
+//(A -> B) & (B -> A) <-> (A <-> B)
+//(A & B) | (~A & ~B) <-> (A <-> B)
+//(~A <-> ~B) <-> (A <-> B)
+
+//Contradictions
+//--------------
+
+//duplex veritas
+
+//A & ~A & B
+//~A & A & B
+//B & A & ~A
+//B & ~A & A
+//A & B & ~A
+//~A & B & A
+
+//A & (~A & B)
+//~A & (A & B)
+//B & (A & ~A)
+//B & (~A & A)
+//A & (B & ~A)
+//~A & (B & A)
