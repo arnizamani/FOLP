@@ -1,0 +1,37 @@
+//PM rules
+//For Folp version 2.0
+
+//Basic rules
+substitution = 1
+
+//Tautology rules
+tautology recall = 1
+strengthen = 1
+
+//Non tautology rules
+weaken = 1
+contradiction recall = 1
+
+
+// Not used anymore
+
+//formula inspect = 1
+//delta inspect = 1
+//for all reduce plus = 1
+//exists reduce plus = 1
+
+//Pi inspect prime = 1
+//truth inspect = 1
+//falsity inspect = 1
+//model inspect = 1
+//sigma inspect prime = 1
+//for all reduce = 1
+//exists reduce = 1
+rewrite = 1
+//all distribute = 1
+//exists distribute = 1
+//sigma and-comprehension = 1
+//sigma or-comprehension = 1
+//pi and-comprehension = 1
+//pi or-comprehension = 1
+//pi arrowcomprehension = 1
